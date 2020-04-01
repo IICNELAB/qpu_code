@@ -1,0 +1,29 @@
+# Net
+net: 'models.qagc_lstm.AGC_LSTM'
+resume: ''
+padding_input: False
+device_ids: [2]
+in_channels: 4
+pa: 1
+rinv: True
+
+# Data
+dataset: 'fpha'
+ntu: '../NTU-RGB-D/qrel/xview'
+fpha: '../fpha/quaternion'
+use_edge: False
+edge_only: False
+data_augmentation: True
+data_param:
+  num_frames: 100
+
+# Optimizer
+start_epoch: 1
+num_epochs: 50
+batch_size: 24
+learning_rate: 5e-4
+weight_decay: 1e-5
+
+# Log
+logdir: 'logs/DA/qagc_Rinv'
+tqdm: True

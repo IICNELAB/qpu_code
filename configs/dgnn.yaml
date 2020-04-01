@@ -1,0 +1,27 @@
+# Net
+net: 'models.dgnn.Model'
+resume: ''
+padding_input: False
+device_ids: [2]
+in_channels: 4
+
+# Data
+dataset: 'fpha'
+ntu: '../NTU-RGB-D/qrel/xview'
+fpha: '../fpha/quaternion'
+use_edge: True
+edge_only: False
+data_augmentation: True
+data_param:
+  num_frames: 100
+
+# Optimizer
+num_epochs: 50
+start_epoch: 1
+batch_size: 32
+learning_rate: 5e-4
+weight_decay: 1e-5
+
+# Log
+logdir: 'logs/test/dgnn'
+tqdm: True

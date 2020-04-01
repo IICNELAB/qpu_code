@@ -1,0 +1,28 @@
+# Net
+net: 'models.mlp_lstm.QLSTM'
+resume: ''
+padding_input: False
+device_ids: [2]
+in_channels: 4
+rinv: True
+
+# Data
+dataset: 'fpha'
+ntu: '../NTU-RGB-D/qrel/xview'
+fpha: '../fpha/quaternion'
+use_edge: False
+edge_only: False
+data_augmentation: True
+data_param:
+  num_frames: 20
+
+# Optimizer
+num_epochs: 200
+start_epoch: 1
+batch_size: 32
+learning_rate: 5e-4
+weight_decay: 1e-5
+
+# Log
+logdir: 'logs/FPHA/MLP/DA/temp'
+tqdm: True

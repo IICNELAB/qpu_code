@@ -1,0 +1,28 @@
+# Net
+net: 'models.agc_lstm.AGC_LSTM'
+resume: ''
+padding_input: False
+device_ids: [2]
+in_channels: 4
+pa: 1
+
+# Data
+dataset: 'ntu'
+ntu: '../NTU-RGB-D/qrel/xview'
+fpha: '../fpha/quaternion'
+use_edge: False
+edge_only: False
+data_augmentation: True
+data_param:
+  num_frames: 100
+
+# Optimizer
+start_epoch: 1
+num_epochs: 50
+batch_size: 32
+learning_rate: 1e-3
+weight_decay: 1e-5
+
+# Log
+logdir: 'logs/test/agc'
+tqdm: True
