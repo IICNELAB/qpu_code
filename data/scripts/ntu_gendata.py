@@ -139,9 +139,9 @@ def xyz2qrel(xyz_path, out_path, part):
 if __name__ == '__main__':
     # Args
     parser = argparse.ArgumentParser(description='NTU-RGB-D Data Converter.')
-    parser.add_argument('data_path',help='End with nturgb+d_skeletons')
-    parser.add_argument('--mode',choices=['xyz','qrel'] default='xyz')
-    parser.add_argument('--bench',choices=['xview','xsub'],action = 'append',default=[])
+    parser.add_argument('data_path', help='End with nturgb+d_skeletons')
+    parser.add_argument('--mode',choices=['xyz','qrel'], default='xyz')
+    parser.add_argument('--bench',choices=['xview','xsub'], action = 'append', default=[])
     parser.add_argument('--ignored_sample_path', default='./data/ntu/samples_with_missing_skeletons.txt')
 
     args = parser.parse_args()
