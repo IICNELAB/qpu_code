@@ -13,7 +13,7 @@ def qpu_linear(input, weight, bias):
     r, i, j, k = quaternion_power_bias(r, i, j, k, weight, bias)
     r, i, j, k = QuaternionRemoveZeros.apply(r, i, j, k)
     r, i, j, k = quaternion_chained_prod(r, i, j, k, -1)
-    # We can also use the custom autograd function which significantly decrease GPU memory usage, but is slower.
+    # We can also use the custom autograd function which significantly decrease GPU memory usage (when QPU layers become deep), but is slower.
     # r, i, j, k = QuaternionChainedProdFunction.apply(r, i, j, k, -1)
 
     return torch.cat([r, i, j, k], dim=-1)
